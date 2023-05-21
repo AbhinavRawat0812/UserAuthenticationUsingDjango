@@ -40,7 +40,7 @@ def create_user(request):
         )
 
         # Return the generated user ID
-        return JsonResponse({'user_id': user.id})
+        return JsonResponse({'user_id': user.id},status=200)
 
 @csrf_exempt
 def login(request):

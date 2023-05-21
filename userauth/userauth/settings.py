@@ -27,7 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+#email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Update with your email provider's SMTP server
+EMAIL_PORT = 587  # Update with the SMTP server's port
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@example.com'  # Update with your email address
+EMAIL_HOST_PASSWORD = 'your-email-password'  # Update with your email password
+EMAIL_SUBJECT_PREFIX = 'userauthapp'  # Prefix for the subject line of verification emails
+EMAIL_TIMEOUT = None  # Timeout for sending email (in seconds)
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',  # Required for email verification
+    'django.contrib.auth.tokens',  # Required for email verification
     'userauthapp'
+          
+    
 ]
 
 MIDDLEWARE = [
