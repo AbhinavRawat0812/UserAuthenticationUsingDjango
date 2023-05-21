@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'django.contrib.sitemaps',
     'django.contrib.sites',  # Required for email verification
     'django.contrib.auth.tokens',  # Required for email verification

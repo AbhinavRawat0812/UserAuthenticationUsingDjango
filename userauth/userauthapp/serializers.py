@@ -14,7 +14,11 @@ class UserLoginSerializer(serializers.ModelSerializer):
         model = User
         fields = ['email','password']
 
-
+class UserSelectSerializer():
+    class Meta:
+        model=User
+        
+        
 class UserRegistrationSerializer(serializers.ModelSerializer):
     # For confirming password field during registration process
     password2 =serializers.CharField(style ={'input_type':'password'},
@@ -22,7 +26,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         
-        fields =['email','name', 'password','password2']
+        fields =['email','name', "mobile",'address','password','password2']
         extra_kwargs = {
             'password':{'write_only':True}
         }
